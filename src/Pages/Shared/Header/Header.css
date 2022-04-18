@@ -1,0 +1,24 @@
+.transparent{
+    background: transparent;
+    z-index: 99;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .camera {
+      animation: example infinite 2s linear;
+    }
+  }
+@keyframes example {
+    0% {transform: rotate(-40deg);}
+    50%{transform: rotate(40deg);}
+    100% {transform: rotate(-40deg);}
+  }
+
+.camera{
+    width: 4rem;
+    margin-right: 2.6rem;
+}
+
+.camera:hover{
+    background-color: aqua;
+    border-radius: 40%;
+}
