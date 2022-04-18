@@ -6,7 +6,7 @@ const Footer = () => {
         <div className='footer'>
             <hr />
             <h4>This is footer part</h4>
-            <p>This website belog to <span>Md Antor</span></p>
+            <p>This website belong to <span>Md Antor</span></p>
         </div>
     );
 };
