@@ -1,0 +1,9 @@
+.banner{
+    width: 98vw;
+    height: 99vh;   
+}
+@media only screen  and (max-width : 900px){
+    .banner{
+        height: 100%;
+    }
+}

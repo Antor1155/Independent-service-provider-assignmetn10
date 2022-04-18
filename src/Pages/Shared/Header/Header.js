@@ -2,12 +2,11 @@ import React from 'react';
 import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./Header.css";
-import camera from "../../../images/camera.svg";
-// import cam from "../../../images/camera.svg"
+import camera from "../../../images/navBar/camera.svg";
 
 const Header = () => {
     return (
-        <div className=' mt-3 transparent sticky-top'>
+        <div className='transparent sticky-top'>
             <Navbar expand={false}>
                 <Container fluid >
                     <Link className='text-decoration-none fs-5 mx-0 mt-0 mb-0 px-0 fw-bold text-primary' to='/home'>Alpha's <p>P_palace</p> </Link>
