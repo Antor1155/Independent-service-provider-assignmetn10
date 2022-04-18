@@ -1,7 +1,25 @@
 .banner{
     width: 98vw;
-    height: 99vh;   
+    height: 80vh;   
+
 }
+.banner-container{
+    position: relative;
+}
+.banner-text{
+    position:absolute;
+    top:45%;
+    width: 99%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color:#a2c1f0bf;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+
+
+
 @media only screen  and (max-width : 900px){
     .banner{
         height: 100%;

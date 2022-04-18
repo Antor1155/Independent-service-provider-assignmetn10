@@ -1,12 +1,13 @@
 import React from 'react';
-import Card from '../../Shared/Card/Card';
+import MyCard from '../../Shared/MyCard/MyCard';
+import "./Services.css"
 
 const routhData = [
     {id:1,
     name: "Profile Photo",
     price: "$ 55",
     image: "https://i.ibb.co/RCCCyPr/profile.jpg",
-    description: "A picture which truely describes you"
+    description: "Picture to truely describe you"
     },
     {id:2,
     name: "Wedding Photo",
@@ -30,8 +31,8 @@ const routhData = [
 
 const Services = () => {
     return (
-        <div>
-            {routhData.map(data => <Card key={data.id} data={data}></Card>)}
+        <div className='mt-5 services'>
+            {routhData.map(data => <MyCard key={data.id} data={data}></MyCard>)}
         </div>
     );
 };
