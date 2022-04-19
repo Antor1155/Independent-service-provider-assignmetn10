@@ -1,6 +1,6 @@
 ## `Alpha's P_palace` : An indivisual protographer's online identity.
 
-The live site: [Alpha's P_palace](https://github.com/facebook/create-react-app).
+The live site: [Alpha's P_palace](https://independent-photographer-726fa.web.app/).
 
 
 
