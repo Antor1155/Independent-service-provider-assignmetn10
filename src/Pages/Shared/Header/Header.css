@@ -15,7 +15,8 @@
 
 .camera{
     width: 4rem;
-    margin-right: 2.6rem;
+    margin-right: 0;
+    margin-left: 2.5rem;
 }
 
 .camera:hover{
