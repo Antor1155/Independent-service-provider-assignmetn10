@@ -1,10 +1,20 @@
 import React from 'react';
-import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./Header.css";
 import camera from "../../../images/navBar/camera.svg";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../Utilities/firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+
+    function handleSignOut(){
+        signOut(auth);
+    }
+    const signoutComponent = <Button className='btn-sm me-3' onClick={handleSignOut}> signout</Button>;
+
     return (
         <div className='transparent sticky-top'>
             <Navbar expand={false}>
@@ -12,24 +22,30 @@ const Header = () => {
                     <Link className='text-decoration-none fs-5 mx-0 mt-0 mb-0 px-0 fw-bold text-primary' to='/home'>Alpha's <p>P_palace</p> </Link>
 
                     <img className='camera' src={camera} alt="camera" />
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
 
-                    <Navbar.Offcanvas
-                        id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel"
-                        placement="end"
-                    >
-                        <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
-                        </Offcanvas.Header>
-                        <Offcanvas.Body>
-                            <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link href="action1">Home</Nav.Link>
-                                <Nav.Link as={Link} to="action2">Link</Nav.Link>
+                    
+                    <div>
+                    {user ? signoutComponent : <h3 className='text-danger d-inline pe-3'>N/A</h3>}
 
-                            </Nav>
-                        </Offcanvas.Body>
-                    </Navbar.Offcanvas>
+                        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+
+                        <Navbar.Offcanvas
+                            id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel"
+                            placement="end"
+                        >
+                            <Offcanvas.Header closeButton>
+                                <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title>
+                            </Offcanvas.Header>
+                            <Offcanvas.Body>
+                                <Nav className="justify-content-end flex-grow-1 pe-3">
+                                    <Nav.Link href="action1">Home</Nav.Link>
+                                    <Nav.Link as={Link} to="action2">Link</Nav.Link>
+
+                                </Nav>
+                            </Offcanvas.Body>
+                        </Navbar.Offcanvas>
+                    </div>
                 </Container>
             </Navbar>
         </div>

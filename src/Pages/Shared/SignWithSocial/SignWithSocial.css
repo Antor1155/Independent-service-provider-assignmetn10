@@ -1,0 +1,22 @@
+.line{
+    width: 30vw;
+    height: 5px;
+    background-color: rgb(162, 229, 118);
+    margin: 15px;
+}
+.orContainer{
+    padding-top: 12px;
+    
+}
+.googleImg{
+    width: 1.9rem;
+}
+.googleSignBtn{
+    border:none;
+    padding:5px 10px;
+    border-radius: 8px;
+    background-color: aqua;
+}
+.googleSignBtn:hover{
+    background-color: rgb(16, 255, 203);
+}
