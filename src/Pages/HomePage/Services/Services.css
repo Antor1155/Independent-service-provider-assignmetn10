@@ -11,4 +11,7 @@
     .services{
         grid-template-columns: 1fr;
     }
+    .camera{
+      display: none;
+    }
 }

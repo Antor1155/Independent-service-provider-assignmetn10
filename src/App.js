@@ -11,6 +11,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import RequireAuth from './Utilities/RequireAuth';
 
+// this portion is to cahnge the background color of body element.
 document.body.style = 'background: #d9f2ff;';
 
 function App() {

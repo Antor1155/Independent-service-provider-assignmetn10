@@ -1,5 +1,5 @@
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Utilities/firebase.init';
 import SginWithSocial from '../Shared/SignWithSocial/SginWithSocial';
@@ -7,6 +7,9 @@ import SginWithSocial from '../Shared/SignWithSocial/SginWithSocial';
 const Register = () => {
     let navigate = useNavigate();
     let location = useLocation();
+    const [sendEmailVerification, sending] = useSendEmailVerification(
+        auth
+      );
 
     let from = location.state?.from?.pathname || "/";
     console.log(from);
@@ -17,13 +20,17 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const handleFormSubmit = event => {
+    const handleFormSubmit =async (event) => {
         event.preventDefault();
 
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(email, password);
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+
+        // code for email verificaiton 
+        await sendEmailVerification();
+        alert('email verification send');
     }
 
     if (error) {
@@ -42,6 +49,7 @@ const Register = () => {
 
     return (
         <div className='w-50 mx-auto mt-3'>
+            <h3 className='text-center'>Register</h3>
             <Form onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
