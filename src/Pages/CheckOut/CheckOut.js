@@ -3,8 +3,8 @@ import { Button, Form } from 'react-bootstrap';
 
 const CheckOut = () => {
     return (
-        <div>
-            <h2 className='text-primary text-center'>Checkout page</h2>
+        <div className='text-center'>
+            <h2 className='text-primary'>Checkout page</h2>
             <Form className='w-50 mx-auto'>
 
                 <fieldset disabled>
